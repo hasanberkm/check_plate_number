@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    //including jQuery 3.5.1 version
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         #plate {
@@ -21,8 +22,10 @@
     });
 
     function plateNumberCheck() {
+        //Input Value
         plate = $("#plate").val().split(' ');
-
+        
+        //Checking Input Value length
         if (plate.length == 3) {
             code = plate[0];
             letter = plate[1];
