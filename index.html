@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #plate {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="plate">
+    <button class="check">Kontrol Et</button>
+</body>
+
+<script>
+    $(".check").click(function () {
+        alert((plateNumberCheck()));
+    });
+
+    function plateNumberCheck() {
+        plate = $("#plate").val().split(' ');
+
+        if (plate.length == 3) {
+            code = plate[0];
+            letter = plate[1];
+            number = plate[2];
+
+            if (code.length >= 2 && $.isNumeric(code)) {
+                if (!$.isNumeric(letter) && letter.length == 1 && (number.length > 0 && number.length <= 5))
+                    return true;
+                else if (!$.isNumeric(letter) && letter.length == 2 && (number.length > 0 && number.length <= 4))
+                    return true;
+                else if (!$.isNumeric(letter) && letter.length == 3 && (number.length > 0 && number.length <= 3))
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
+        }
+        else
+            return false;
+    };
+</script>
+
+</html>
