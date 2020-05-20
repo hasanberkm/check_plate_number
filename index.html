@@ -32,11 +32,11 @@
             number = plate[2];
 
             if (code.length >= 2 && $.isNumeric(code)) {
-                if (!$.isNumeric(letter) && letter.length == 1 && (number.length > 0 && number.length <= 5))
+                if (!$.isNumeric(letter) && letter.length == 1 && (number.length > 0 && number.length == 5))
                     return true;
-                else if (!$.isNumeric(letter) && letter.length == 2 && (number.length > 0 && number.length <= 4))
+                else if (!$.isNumeric(letter) && letter.length == 2 && (number.length > 0 && number.length == 4))
                     return true;
-                else if (!$.isNumeric(letter) && letter.length == 3 && (number.length > 0 && number.length <= 3))
+                else if (!$.isNumeric(letter) && letter.length == 3 && (number.length > 0 && number.length == 3))
                     return true;
                 else
                     return false;
